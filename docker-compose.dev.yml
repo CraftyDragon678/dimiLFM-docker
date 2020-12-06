@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  client:
+    tty: true
+    build:
+      dockerfile: Dockerfile.dev
+  server:
+    build:
+      dockerfile: Dockerfile.dev
+  nginx:
+    build:
+      dockerfile: Dockerfile.dev

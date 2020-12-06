@@ -2,7 +2,6 @@ version: "3.8"
 services:
   client:
     build:
-      dockerfile: Dockerfile.dev
       context: ./dimiLFM-web
     volumes:
       - ./dimiLFM-web/:/app
@@ -11,7 +10,6 @@ services:
       - backend
   server:
     build:
-      dockerfile: Dockerfile.dev
       context: ./dimiLFM-server
     volumes:
       - ./dimiLFM-server/:/app
@@ -42,13 +40,16 @@ services:
       - data:/data/db
     ports:
       - "27017:27017"
+    networks:
+      - backend
   nginx:
     restart: always
     build:
-      dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
       - "8080:80"
+    networks:
+      - backend
 
 networks:
   backend:
