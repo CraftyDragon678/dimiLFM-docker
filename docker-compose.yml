@@ -19,8 +19,6 @@ services:
     depends_on:
       - mongo
       - redis
-    ports:
-      - "5000:8080"
   redis:
     container_name: redis
     image: redis
@@ -30,16 +28,12 @@ services:
       - backend
     volumes:
       - data:/data/redis
-    ports:
-      - "6379:6379"
     restart: always
   mongo:
     container_name: mongo
     image: mongo
     volumes:
       - data:/data/db
-    ports:
-      - "27017:27017"
     networks:
       - backend
   nginx:
@@ -47,7 +41,7 @@ services:
     build:
       context: ./nginx
     ports:
-      - "8080:80"
+      - "7373:80"
     networks:
       - backend
 
