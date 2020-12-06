@@ -4,9 +4,13 @@ services:
     tty: true
     build:
       dockerfile: Dockerfile.dev
+    volumes:
+      - ./dimiLFM-web/:/app
   server:
     build:
       dockerfile: Dockerfile.dev
+    volumes:
+      - ./dimiLFM-server/:/app
   nginx:
     build:
       dockerfile: Dockerfile.dev

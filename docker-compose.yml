@@ -4,7 +4,6 @@ services:
     build:
       context: ./dimiLFM-web
     volumes:
-      - ./dimiLFM-web/:/app
       - /app/node_modules
     networks:
       - backend
@@ -12,7 +11,6 @@ services:
     build:
       context: ./dimiLFM-server
     volumes:
-      - ./dimiLFM-server/:/app
       - /app/node_modules
     networks:
       - backend
