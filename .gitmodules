@@ -1,6 +1,6 @@
 [submodule "dimiLFM-server"]
 	path = dimiLFM-server
-	url = git@github.com:CraftyDragon678/dimiLFM-server.git
+	url = ./dimiLFM-server.git
 [submodule "dimiLFM-web"]
 	path = dimiLFM-web
-	url = git@github.com:CraftyDragon678/dimiLFM-web.git
+	url = ./dimiLFM-web.git
